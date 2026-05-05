@@ -204,7 +204,7 @@ internal class WriteBackHandler : IDisposable
         {
             // This method is only used internally within WriteBackHandler
             // Check if steam launch is enabled and if the shortcut has an AppId
-            if (sc.AppId == 0)
+            if (!_settings.LaunchViaSteam || sc.AppId == 0)
             {
                 return;
             }
